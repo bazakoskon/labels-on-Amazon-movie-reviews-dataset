@@ -77,7 +77,7 @@ The python script generates a new compressed file that is actually same with the
 In fact, (the python script) applies a mapping between ASIN values in both files and adds the labels data of the product in every review instance of that, as an extra column.
 
 Here is the code:
-```markdown
+```python
 import gzip
 import csv
 import ast
