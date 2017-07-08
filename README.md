@@ -46,6 +46,24 @@ where:
 - review/summary: review summary
 - review/text: text of the review
 
+## The new labeled dataset
+
+The new data format will be:
+
+- product/productId: _B00006HAXW_
+- review/userId: _A1RSDE90N6RSZF_
+- review/profileName: _Joseph M. Kotow_
+- review/helpfulness: _9/9_
+- review/score: _5.0_
+- review/time: _1042502400_
+- review/summary: _Pittsburgh - Home of the OLDIES_
+- review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
+- **product/categories: _['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']_**
+
+## Hierarchical format
+
+There are also included two JSON files that contain all the labels in hierarchical format (Tree structure). With ASINs included and without. 
+
 ## Instructions 
 
 You can follow the steps mentioned below on how to get the enriched dataset: 
@@ -113,21 +131,7 @@ if __name__ == "__main__":
         print inst
 ```
 
-## The new labeled dataset
-
-The new data format will be:
-
-- product/productId: _B00006HAXW_
-- review/userId: _A1RSDE90N6RSZF_
-- review/profileName: _Joseph M. Kotow_
-- review/helpfulness: _9/9_
-- review/score: _5.0_
-- review/time: _1042502400_
-- review/summary: _Pittsburgh - Home of the OLDIES_
-- review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
-- **product/categories: _['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']_**
-
-## Credits:
+## Acknowledgements
 
 If you publish articles based on this dataset, please cite the following paper:
 
