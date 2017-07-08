@@ -1,36 +1,46 @@
 # Addition of ground truth labels on Amazon movie reviews dataset
-## What is it?
+### What is it?
 
 This is a side project for my thesis "Classification/Clustering Techniques for Large Web Data Collections".
 
-My main goal was to provide a new, enriched, ground truth labeled dataset to the Machine Learning community. All labels have been collected by crawling/scraping Amazon.com for a period of some months. By labels I mean the categories in which the products are classified (look the green underlined labels on the screenshot below).
+My main goal was to provide a new, enriched, ground truth labeled dataset to the Machine Learning community. 
+All labels have been collected by crawling/scraping Amazon.com for a period of some months. 
+By labels I mean the categories in which the products are classified (look the green underlined labels on the screenshot below).
 
 ![Image](http://i.imgur.com/mAiuoO6.png)
 
 Please, feel free to make any contributions you feel will make it better.
 
-## The original dataset
+### The original dataset
 
-All the collected data (for every ASIN of the SNAP Dataset, ~253k products for ~8m reviews) are stored in a csv file (labels.csv) in the following format:
+All the collected data (for every ASIN of the SNAP Dataset, ~253k products for ~8m reviews) are stored in a csv file ```labels.csv``` in the following format:
 
 - ASIN: unique identifier for the product
-- Categories: ['label<sub>0</sub>', 'label<sub>1</sub>', 'label<sub>2</sub>',..., 'label<sub>n</sub>']
+- Categories: [label<sub>0</sub>, label<sub>1</sub>, label<sub>2</sub>,..., label<sub>n</sub>]
 
 The [Amazon Movies Reviews dataset](https://snap.stanford.edu/data/web-Movies.html) consists of 7,911,684 reviews Amazon users left between Aug 1997 - Oct 2012.
 
 Data format:
-product/productId: B00006HAXW
-review/userId: A1RSDE90N6RSZF
-review/profileName: Joseph M. Kotow
-review/helpfulness: 9/9
-review/score: 5.0
-review/time: 1042502400
-review/summary: Pittsburgh - Home of the OLDIES
-review/text: I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!
+
+product/productId: _B00006HAXW_
+
+review/userId: _A1RSDE90N6RSZF_
+
+review/profileName: _Joseph M. Kotow_
+
+review/helpfulness: _9/9_
+
+review/score: _5.0_
+
+review/time: _1042502400_
+
+review/summary: _Pittsburgh - Home of the OLDIES_
+
+review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
 
 where:
-- product/productId: asin, e.g. amazon.com/dp/B00006HAXW
-- review/userId: id of the user, e.g. A1RSDE90N6RSZF
+- product/productId: asin, e.g. [amazon.com/dp/B00006HAXW](http://www.amazon.com/dp/B00006HAXW)
+- review/userId: id of the user, e.g. [A1RSDE90N6RSZF](http://www.amazon.com/gp/cdp/member-reviews/A1RSDE90N6RSZF)
 - review/profileName: name of the user
 - review/helpfulness: fraction of users who found the review helpful
 - review/score: rating of the product
@@ -38,12 +48,12 @@ where:
 - review/summary: review summary
 - review/text: text of the review
 
-## Instructions 
+### Instructions 
 
 You can follow the steps mentioned below on how to get the enriched dataset: 
 1. Download the original dataset from the [SNAP website](https://snap.stanford.edu/data/web-Movies.html) (~ 3.3 GB compressed) and put it in the root folder of the repository (where you can find also the  ```labels.csv``` file).
-2/ Execute the python file (```enrich.py```), so the new enriched multi-labeled dataset be exported. The name of the new file should be ```output.txt.gz```.
-_Notice: Please be patient s the python script take a while to parse all these reviews_
+2. Execute the python file ```enrich.py```, so the new enriched multi-labeled dataset be exported. The name of the new file should be ```output.txt.gz```.
+_Notice: Please be patient s the python script take a while to parse all these reviews._
 
 The python script generates a new compressed file that is actually same with the original one, but with an extra feature (product/categories).
 
@@ -104,24 +114,36 @@ if __name__ == "__main__":
         print inst
 ```
 
-## The new labeled dataset
+### The new labeled dataset
 
 The new data format will be:
-product/productId: B00006HAXW
-review/userId: A1RSDE90N6RSZF
-review/profileName: Joseph M. Kotow
-review/helpfulness: 9/9
-review/score: 5.0
-review/time: 1042502400
-review/summary: Pittsburgh - Home of the OLDIES
-review/text: I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!
-**product/categories: ['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']**
 
-# Credits:
+product/productId: _B00006HAXW_
+
+review/userId: _A1RSDE90N6RSZF_
+
+review/profileName: _Joseph M. Kotow_
+
+review/helpfulness: _9/9_
+
+review/score: _5.0_
+
+review/time: _1042502400_
+
+review/summary: _Pittsburgh - Home of the OLDIES_
+
+review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
+
+**product/categories: _['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']_**
+
+### Credits:
+
 If you publish articles based on this dataset, please cite the following paper:
-J. McAuley and J. Leskovec. [From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews](http://i.stanford.edu/~julian/pdfs/www13.pdf). WWW, 2013.
+
+- J. McAuley and J. Leskovec. [From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews](http://i.stanford.edu/~julian/pdfs/www13.pdf). WWW, 2013.
 
 Bibtex is also available:
+
 ```
 @inproceedings{McAuley:2013:ACM:2488388.2488466,
  author = {McAuley, Julian John and Leskovec, Jure},
