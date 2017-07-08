@@ -1,32 +1,74 @@
-## Welcome to GitHub Pages
+# Addition of ground truth labels on Amazon movie reviews dataset
+## What is it?
 
-<img src="https://latex.codecogs.com/gif.latex?[label_1,&space;label_2,...,&space;label_n]" title="[label_1, label_2,..., label_n]" />
+This is a side project for my thesis "Classification/Clustering Techniques for Large Web Data Collections".
 
-*This data was originally published on [SNAP](https://snap.stanford.edu/data/web-Movies.html).*
+My main goal was to provide a new, enriched, ground truth labeled dataset to the Machine Learning community. All labels have been collected by crawling/scraping Amazon.com for a period of some months. By labels I mean the categories in which the products are classified (look the green underlined labels on the screenshot below).
 
-You can use the [editor on GitHub](https://github.com/bazakoskon/labels-on-Amazon-movie-reviews-dataset/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+![Image](http://i.imgur.com/mAiuoO6.png)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Please, feel free to make any contributions you feel will make it better.
 
-### Markdown
+## The original dataset
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-Once you have downloaded the original Dataset, run the following code (this .py file is included in the repository [script](https://raw.githubusercontent.com/bazakoskon/labels-on-Amazon-movie-reviews-dataset/master/enrich.py))
+All the collected data (for every ASIN of the SNAP Dataset, ~253k products for ~8m reviews) are stored in a csv file (labels.csv) in the following format:
 
+- ASIN: unique identifier for the product
+- Categories: ['label<sub>0</sub>', 'label<sub>1</sub>', 'label<sub>2</sub>',..., 'label<sub>n</sub>']
+
+The [Amazon Movies Reviews dataset](https://snap.stanford.edu/data/web-Movies.html) consists of 7,911,684 reviews Amazon users left between Aug 1997 - Oct 2012.
+
+Data format:
+product/productId: B00006HAXW
+review/userId: A1RSDE90N6RSZF
+review/profileName: Joseph M. Kotow
+review/helpfulness: 9/9
+review/score: 5.0
+review/time: 1042502400
+review/summary: Pittsburgh - Home of the OLDIES
+review/text: I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!
+
+where:
+- product/productId: asin, e.g. amazon.com/dp/B00006HAXW
+- review/userId: id of the user, e.g. A1RSDE90N6RSZF
+- review/profileName: name of the user
+- review/helpfulness: fraction of users who found the review helpful
+- review/score: rating of the product
+- review/time: time of the review (unix time)
+- review/summary: review summary
+- review/text: text of the review
+
+## Instructions 
+
+You can follow the steps mentioned below on how to get the enriched dataset: 
+1. Download the original dataset from the [SNAP website](https://snap.stanford.edu/data/web-Movies.html) (~ 3.3 GB compressed) and put it in the root folder of the repository (where you can find also the  ```labels.csv``` file).
+2/ Execute the python file (```enrich.py```), so the new enriched multi-labeled dataset be exported. The name of the new file should be ```output.txt.gz```.
+_Notice: Please be patient s the python script take a while to parse all these reviews_
+
+The python script generates a new compressed file that is actually same with the original one, but with an extra feature (product/categories).
+
+In fact,(the python script) applies a mapping between ASIN values in both files and adds the labels data of the product in every review instance of that, as an extra column.
+
+Here is the code:
 ```markdown
 import gzip
 import csv
 import ast
 
+def look_up(asin, diction):
+    try:
+        return diction[asin]
+    except KeyError:
+        print asin
+        return []
+
 def load_labels():
-    print ("Loading labels...\n")
     labels_dictionary = {}
     with open('labels.csv', mode='r') as infile:
         csvreader = csv.reader(infile)
         next(csvreader)
         for rows in csvreader:
             labels_dictionary[rows[0]] = ast.literal_eval(rows[1])
-    print ("Labels have been loaded successfully!\n")
     return labels_dictionary
 
 def parse(filename):
@@ -44,7 +86,7 @@ def parse(filename):
         rest = l[colonPos+2:]
         entry[eName] = rest
         if eName == 'product/productId':
-            entry['product/categories'] = labels_dict[rest]    
+            entry['product/categories'] = look_up(rest, labels_dict)   
     yield entry
 
 if __name__ == "__main__":
@@ -55,31 +97,49 @@ if __name__ == "__main__":
                 for i in e:
                     fo.write('%s: %s\n' % (i, e[i]))
                 fo.write("\n")
-        print ("New enriched dataset has been exported successfully!")
+        print ("New enriched dataset has been exported successfully!\nFile name: output.txt.gz")
     except Exception as inst:
         print type(inst)
         print inst.args
-        print inst```
-# Header 1
-## Header 2
-### Header 3
+        print inst
+```
 
-- Bulleted
-- List
+## The new labeled dataset
 
-1. Numbered
-2. List
+The new data format will be:
+product/productId: B00006HAXW
+review/userId: A1RSDE90N6RSZF
+review/profileName: Joseph M. Kotow
+review/helpfulness: 9/9
+review/score: 5.0
+review/time: 1042502400
+review/summary: Pittsburgh - Home of the OLDIES
+review/text: I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!
+**product/categories: ['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']**
 
-**Bold** and _Italic_ and `Code` text
+# Credits:
+If you publish articles based on this dataset, please cite the following paper:
+J. McAuley and J. Leskovec. [From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews](http://i.stanford.edu/~julian/pdfs/www13.pdf). WWW, 2013.
 
-[Link](url) and ![Image](src)
+Bibtex is also available:
+```
+@inproceedings{McAuley:2013:ACM:2488388.2488466,
+ author = {McAuley, Julian John and Leskovec, Jure},
+ title = {From Amateurs to Connoisseurs: Modeling the Evolution of User Expertise Through Online Reviews},
+ booktitle = {Proceedings of the 22Nd International Conference on World Wide Web},
+ series = {WWW '13},
+ year = {2013},
+ isbn = {978-1-4503-2035-1},
+ location = {Rio de Janeiro, Brazil},
+ pages = {897--908},
+ numpages = {12},
+ url = {http://doi.acm.org/10.1145/2488388.2488466},
+ doi = {10.1145/2488388.2488466},
+ acmid = {2488466},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {expertise, recommender systems, user modeling},
+} 
+```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bazakoskon/labels-on-Amazon-movie-reviews-dataset/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
