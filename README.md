@@ -1,6 +1,6 @@
 # Addition of ground truth labels on Amazon movie reviews dataset
 
-[Imgur](http://i.imgur.com/W5KG8qQ.png)
+![Image](http://i.imgur.com/W5KG8qQ.png)
 
 ## What is it?
 
