@@ -1,5 +1,7 @@
 ## Welcome to GitHub Pages
 
+<img src="https://latex.codecogs.com/gif.latex?[label_1,&space;label_2,...,&space;label_n]" title="[label_1, label_2,..., label_n]" />
+
 *This data was originally published on [SNAP](https://snap.stanford.edu/data/web-Movies.html).*
 
 You can use the [editor on GitHub](https://github.com/bazakoskon/labels-on-Amazon-movie-reviews-dataset/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
