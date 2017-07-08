@@ -139,7 +139,7 @@ If you publish articles based on this dataset, please cite the following paper:
 
 BibTeX is also available:
 
-```json
+```
 @inproceedings{McAuley:2013:ACM:2488388.2488466,
  author = {McAuley, Julian John and Leskovec, Jure},
  title = {From Amateurs to Connoisseurs: Modeling the Evolution of User Expertise Through Online Reviews},
