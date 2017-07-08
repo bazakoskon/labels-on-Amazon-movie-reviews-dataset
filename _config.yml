@@ -1,5 +1,5 @@
 theme: jekyll-theme-midnight
 title: [Addition of ground truth labels on Amazon movie reviews dataset]
-description: [A short description of your site's purpose]
+description: [A new labeled data source]
 show_downloads: ["true"]
 google_analytics: [UA-102276774-1]
