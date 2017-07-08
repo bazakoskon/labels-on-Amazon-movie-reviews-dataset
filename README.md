@@ -13,6 +13,7 @@ By labels I mean the categories in which the products are classified (look the g
 ![Image](http://i.imgur.com/mAiuoO6.png)
 
 Please, feel free to make any contributions you feel will make it better.
+_It is also available on [Kaggle](https://www.kaggle.com/thebuzz/ground-truth-labels-amazon-movie-reviews-dataset)._
 
 ## The original dataset
 
