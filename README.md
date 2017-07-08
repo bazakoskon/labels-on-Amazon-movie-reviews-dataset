@@ -18,11 +18,6 @@ _It is also available on [Kaggle](https://www.kaggle.com/thebuzz/ground-truth-la
 
 ## The original dataset
 
-All the collected data (for every ASIN of the SNAP Dataset, ~253k products for ~8m reviews) are stored in a csv file ```labels.csv``` in the following format:
-
-- ASIN: unique identifier for the product
-- Categories: [label<sub>0</sub>, label<sub>1</sub>, label<sub>2</sub>,..., label<sub>n</sub>]
-
 The [Amazon Movies Reviews dataset](https://snap.stanford.edu/data/web-Movies.html) consists of 7,911,684 reviews Amazon users left between Aug 1997 - Oct 2012 about 253,059 products.
 
 Data format:
@@ -47,6 +42,11 @@ where:
 - review/text: text of the review
 
 ## The new labeled dataset
+
+All the collected data (for every ASIN of the SNAP Dataset, ~253k products for ~8m reviews) are stored in a csv file ```labels.csv``` in the following format:
+
+- ASIN: unique identifier for the product
+- Categories: [label<sub>0</sub>, label<sub>1</sub>, label<sub>2</sub>,..., label<sub>n</sub>]
 
 The new data format will be:
 
