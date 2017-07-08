@@ -1,5 +1,8 @@
 # Addition of ground truth labels on Amazon movie reviews dataset
-### What is it?
+
+<img src="http://i.imgur.com/W5KG8qQ.png" alt="labels cloud" style="width: 100px;"/>
+
+## What is it?
 
 This is a side project for my thesis "Classification/Clustering Techniques for Large Web Data Collections".
 
@@ -11,7 +14,7 @@ By labels I mean the categories in which the products are classified (look the g
 
 Please, feel free to make any contributions you feel will make it better.
 
-### The original dataset
+## The original dataset
 
 All the collected data (for every ASIN of the SNAP Dataset, ~253k products for ~8m reviews) are stored in a csv file ```labels.csv``` in the following format:
 
@@ -48,7 +51,7 @@ where:
 - review/summary: review summary
 - review/text: text of the review
 
-### Instructions 
+## Instructions 
 
 You can follow the steps mentioned below on how to get the enriched dataset: 
 1. Download the original dataset from the [SNAP website](https://snap.stanford.edu/data/web-Movies.html) (~ 3.3 GB compressed) and put it in the root folder of the repository (where you can find also the  ```labels.csv``` file).
@@ -114,7 +117,7 @@ if __name__ == "__main__":
         print inst
 ```
 
-### The new labeled dataset
+## The new labeled dataset
 
 The new data format will be:
 
@@ -136,7 +139,7 @@ review/text: _I have all of the doo wop DVD's and this one is as good or better 
 
 **product/categories: _['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']_**
 
-### Credits:
+## Credits:
 
 If you publish articles based on this dataset, please cite the following paper:
 
@@ -163,5 +166,4 @@ Bibtex is also available:
  keywords = {expertise, recommender systems, user modeling},
 } 
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[//]: # "For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/)."
