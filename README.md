@@ -4,7 +4,7 @@
 
 ## What is it?
 
-This is a side project for my thesis "Classification/Clustering Techniques for Large Web Data Collections".
+This is a side project for my thesis "Classification/Clustering Techniques for Large Web Data Collections" (supervised by Prof. [Ioannis Anagnostopoulos](http://anagnostopoulos.name)).
 
 My main goal was to provide a new, enriched, ground truth labeled dataset to the data science community. 
 All labels have been collected by crawling/scraping Amazon.com for a period of some months. 
