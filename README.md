@@ -9,6 +9,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Once you have downloaded the original Dataset, run the following code (this .py file is included in the repository [script](https://raw.githubusercontent.com/bazakoskon/labels-on-Amazon-movie-reviews-dataset/master/enrich.py))
 
 ```markdown
 import gzip
