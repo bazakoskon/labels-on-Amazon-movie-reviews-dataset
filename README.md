@@ -1,6 +1,6 @@
 # Addition of ground truth labels on Amazon movie reviews dataset
 
-<img src="http://i.imgur.com/W5KG8qQ.png" alt="labels cloud" style="width: 100px;"/>
+[Imgur](http://i.imgur.com/W5KG8qQ.png)
 
 ## What is it?
 
@@ -25,21 +25,14 @@ The [Amazon Movies Reviews dataset](https://snap.stanford.edu/data/web-Movies.ht
 
 Data format:
 
-product/productId: _B00006HAXW_
-
-review/userId: _A1RSDE90N6RSZF_
-
-review/profileName: _Joseph M. Kotow_
-
-review/helpfulness: _9/9_
-
-review/score: _5.0_
-
-review/time: _1042502400_
-
-review/summary: _Pittsburgh - Home of the OLDIES_
-
-review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
+- product/productId: _B00006HAXW_
+- review/userId: _A1RSDE90N6RSZF_
+- review/profileName: _Joseph M. Kotow_
+- review/helpfulness: _9/9_
+- review/score: _5.0_
+- review/time: _1042502400_
+- review/summary: _Pittsburgh - Home of the OLDIES_
+- review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
 
 where:
 - product/productId: asin, e.g. [amazon.com/dp/B00006HAXW](http://www.amazon.com/dp/B00006HAXW)
@@ -121,23 +114,15 @@ if __name__ == "__main__":
 
 The new data format will be:
 
-product/productId: _B00006HAXW_
-
-review/userId: _A1RSDE90N6RSZF_
-
-review/profileName: _Joseph M. Kotow_
-
-review/helpfulness: _9/9_
-
-review/score: _5.0_
-
-review/time: _1042502400_
-
-review/summary: _Pittsburgh - Home of the OLDIES_
-
-review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
-
-**product/categories: _['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']_**
+- product/productId: _B00006HAXW_
+- review/userId: _A1RSDE90N6RSZF_
+- review/profileName: _Joseph M. Kotow_
+- review/helpfulness: _9/9_
+- review/score: _5.0_
+- review/time: _1042502400_
+- review/summary: _Pittsburgh - Home of the OLDIES_
+- review/text: _I have all of the doo wop DVD's and this one is as good or better than the 1st ones. Remember once these performers are gone, we'll never get to see them again. Rhino did an excellent job and if you like or love doo wop and Rock n Roll you'll LOVE this DVD!!_
+- **product/categories: _['CDs & Vinyl', 'Pop', 'Oldies', 'Doo Wop']_**
 
 ## Credits:
 
