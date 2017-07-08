@@ -49,6 +49,7 @@ where:
 You can follow the steps mentioned below on how to get the enriched dataset: 
 1. Download the original dataset from the [SNAP website](https://snap.stanford.edu/data/web-Movies.html) (~ 3.3 GB compressed) and put it in the root folder of the repository (where you can find also the  ```labels.csv``` file).
 2. Execute the python file ```enrich.py```, so the new enriched multi-labeled dataset be exported. The name of the new file should be ```output.txt.gz```.
+
 _Notice: Please be patient s the python script take a while to parse all these reviews._
 
 The python script generates a new compressed file that is actually same with the original one, but with an extra feature (product/categories).
