@@ -1,4 +1,4 @@
-theme: jekyll-theme-dinky
+theme: jekyll-theme-minimal
 title: [Ground truth labels for Amazon movie reviews dataset]
 description: [A new labeled data source available for your machine learning & data science projects]
 show_downloads: ["true"]
