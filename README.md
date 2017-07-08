@@ -6,7 +6,7 @@
 
 This is a side project for my thesis "Classification/Clustering Techniques for Large Web Data Collections".
 
-My main goal was to provide a new, enriched, ground truth labeled dataset to the Machine Learning community. 
+My main goal was to provide a new, enriched, ground truth labeled dataset to the data science community. 
 All labels have been collected by crawling/scraping Amazon.com for a period of some months. 
 By labels I mean the categories in which the products are classified (look the green underlined labels on the screenshot below).
 
