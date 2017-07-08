@@ -1,5 +1,5 @@
 theme: jekyll-theme-midnight
-title: [Addition of ground truth labels on Amazon movie reviews dataset]
-description: [A new labeled data source]
+title: [Ground truth labels for Amazon movie reviews dataset]
+description: [A new labeled data source available for your machine learning projects]
 show_downloads: ["true"]
 google_analytics: [UA-102276774-1]
