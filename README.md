@@ -12,7 +12,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 
 ```markdown
 import gzip
-import csv,os,json
+import csv
 import ast
 
 labels_dictionary = {}
@@ -39,11 +39,19 @@ def parse(filename):
             entry['product/categories'] = labels_dictionary[rest]    
     yield entry
 
-with gzip.open('output.txt.gz', 'wb') as fo:
-    for e in parse2("movies.txt.gz"):
-        for i in e:
-            fo.write('%s: %s\n' % (i, e[i]))
-        fo.write("\n")
+if __name__ == "__main__":
+    try:
+        print ("Parsing data...\nPlease be patient, this will take a while...")
+        with gzip.open('output.txt.gz', 'wb') as fo:
+            for e in parse("movies.txt.gz"):
+                for i in e:
+                    fo.write('%s: %s\n' % (i, e[i]))
+                fo.write("\n")
+        print ("New enriched dataset has been exported successfully!")
+    except Exception as inst:
+        print type(inst)
+        print inst.args
+        print inst
 ```
 # Header 1
 ## Header 2
