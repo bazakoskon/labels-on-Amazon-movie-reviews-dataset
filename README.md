@@ -21,7 +21,7 @@ All the collected data (for every ASIN of the SNAP Dataset, ~253k products for ~
 - ASIN: unique identifier for the product
 - Categories: [label<sub>0</sub>, label<sub>1</sub>, label<sub>2</sub>,..., label<sub>n</sub>]
 
-The [Amazon Movies Reviews dataset](https://snap.stanford.edu/data/web-Movies.html) consists of 7,911,684 reviews Amazon users left between Aug 1997 - Oct 2012.
+The [Amazon Movies Reviews dataset](https://snap.stanford.edu/data/web-Movies.html) consists of 7,911,684 reviews Amazon users left between Aug 1997 - Oct 2012 about 253,059 products.
 
 Data format:
 
@@ -54,7 +54,7 @@ _Notice: Please be patient as the python script will take a while to parse all t
 
 The python script generates a new compressed file that is actually same with the original one, but with an extra feature (product/categories).
 
-In fact,(the python script) applies a mapping between ASIN values in both files and adds the labels data of the product in every review instance of that, as an extra column.
+In fact, (the python script) applies a mapping between ASIN values in both files and adds the labels data of the product in every review instance of that, as an extra column.
 
 Here is the code:
 ```markdown
