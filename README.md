@@ -62,7 +62,7 @@ The new data format will be:
 
 ## Hierarchical format
 
-There are also included two JSON files that contain all the labels in hierarchical format (Tree structure). With ASINs included and without. 
+There are also included two JSON files that contain all the labels in hierarchical format (Tree structure). With ASINs included and without. ```hierarchy.py``` generates them.
 
 ![Hierarchical format](http://i.imgur.com/y5jvVVu.png)
 
