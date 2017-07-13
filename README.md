@@ -135,13 +135,24 @@ if __name__ == "__main__":
 
 ## Acknowledgements
 
-If you publish articles based on this dataset, please cite the following paper:
+If you publish articles based on this dataset, please cite the following papers:
+
+- Bazakos Konstantinos and Ioannis Anagnostopoulos. Classification/Clustering Techniques for Large Web Data
+Collections. Dissertation, Hellenic Open University, 2017.
 
 - J. McAuley and J. Leskovec. [From amateurs to connoisseurs: modeling the evolution of user expertise through online reviews](http://i.stanford.edu/~julian/pdfs/www13.pdf). WWW, 2013.
 
 BibTeX is also available:
 
 ```
+@ptychionthesis{bzks:2017,
+  author = {Bazakos Konstantinos and Anagnostopoulos Ioannis},
+  title = {Classification/Clustering Techniques for Large Web Data Collections},
+  school = {Hellenic Open University},
+  year = {2017},
+  month = {Jul}
+}
+
 @inproceedings{McAuley:2013:ACM:2488388.2488466,
  author = {McAuley, Julian John and Leskovec, Jure},
  title = {From Amateurs to Connoisseurs: Modeling the Evolution of User Expertise Through Online Reviews},
